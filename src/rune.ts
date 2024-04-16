@@ -1,7 +1,7 @@
 import { base26 } from './utils'
 
 export class Rune {
-  n = 0n
+  readonly n
 
   constructor(n: bigint | string) {
     if (typeof n === 'string')

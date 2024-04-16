@@ -17,7 +17,11 @@ export function base26(n: string): bigint {
   let result = 0n
   let i = 0
   while (i < n.length) {
-    let value = BigInt(alphabet.indexOf(n[i]))
+    const index = alphabet.indexOf(n[i])
+    if (index === -1)
+      throw new Error(`Invalid character: ${n[i]}`)
+
+    let value = BigInt(index)
     if (i < n.length - 1)
       value += 1n
 
@@ -32,13 +36,13 @@ export function spacersFromName(name: string): number {
   let length = 0
   for (let i = 0; i < name.length; i++) {
     const char = name[i]
-    if (/[A-Z]/.test(char)) {
+    if (/[A-Z]/.test(char))
       length += 1
-    }
-    else {
+    else
       if (char === '.' || char === '•')
         spacers |= 1 << (length - 1)
-    }
+      else
+        throw new Error(`Invalid character: ${char}`)
   }
   return spacers
 }

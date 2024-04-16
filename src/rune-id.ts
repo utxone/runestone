@@ -1,6 +1,6 @@
 export class RuneId {
-  block: number
-  tx: number
+  readonly block: number
+  readonly tx: number
   constructor(block: number, tx: number) {
     if (block === 0 && tx > 0)
       throw new Error('Invalid RuneId')

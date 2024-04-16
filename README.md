@@ -20,7 +20,7 @@ const runestone = new Runestone(
             },
             premine: 18446744073709551615n,
             rune: new Rune(0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFn),
-            symbol: 'h',
+            symbol: '$',
             spacers: MAX_SPACERS,
         },
     },

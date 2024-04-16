@@ -6,13 +6,10 @@ import { encodeToVec } from './varint'
 import { encodeScript } from './script'
 
 export class Runestone {
-  burn = false
-  claim = 0n
-  default_output = 0n
-  edicts: Edict[]
-  etching?: Etching
-  mint?: RuneId
-  pointer?: number
+  readonly edicts: Edict[]
+  readonly etching?: Etching
+  readonly mint?: RuneId
+  readonly pointer?: number
 
   constructor({ edicts, etching, pointer, mint }: { edicts?: Edict[], etching?: Etching, pointer?: number, mint?: RuneId }) {
     this.edicts = edicts ?? []
